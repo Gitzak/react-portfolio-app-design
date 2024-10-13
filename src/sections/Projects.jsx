@@ -1,16 +1,14 @@
 import React from "react";
+import SubTitle from "../components/SubTitle";
+import TitlePrimary from "../components/TitlePrimary";
 
 const Projects = () => {
     return (
         <section id="projects">
             <div className="bg-transparent py-24 sm:py-32">
                 <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-                    <p className="text-2xl mt-5 font-semibold text-center font-RobotoMono leading-7 text-primary">
-                        Deploy faster
-                    </p>
-                    <h2 className="mx-auto mt-2 max-w-lg text-pretty text-center text-4xl font-medium tracking-tight text-white font-outfit sm:text-5xl">
-                        Design, branding & web development projects
-                    </h2>
+                    <SubTitle text="Deploy faster" />
+                    <TitlePrimary text="Design, branding & web development projects" />
                     <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
                         <div className="relative lg:row-span-2">
                             <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>

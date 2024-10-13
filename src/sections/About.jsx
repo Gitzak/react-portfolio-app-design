@@ -21,6 +21,9 @@ import {
     SiGit,
     SiMysql,
 } from "react-icons/si";
+import TitlePrimary from "../components/TitlePrimary";
+import SubTitle from "../components/SubTitle";
+import MyButton from "../components/MyButton";
 
 const About = () => {
     return (
@@ -32,12 +35,8 @@ const About = () => {
                 <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
                     <div className="lg:pr-4">
                         <div className="lg:max-w-lg">
-                            <p className="text-2xl mt-5 font-semibold font-RobotoMono leading-7 text-primary">
-                                Abour Me
-                            </p>
-                            <h1 className="mt-4 text-3xl font-bold tracking-tight font-outfit text-white sm:text-4xl">
-                                Experienced Web Developer
-                            </h1>
+                            <SubTitle text="About Me" />
+                            <TitlePrimary text="Experienced Web Developer" />
                             <p className="mt-6 text-md leading-8 text-white font-RobotoMono">
                                 A skilled web developer based in Rabat, Morocco,
                                 this individual combines creativity with
@@ -49,7 +48,7 @@ const About = () => {
                                 strong emphasis on quality and attention to
                                 detail.
                             </p>
-                            <p className="text-md leading-8 text-white font-RobotoMono mt-5">
+                            <p className="text-md leading-8 mb-5 text-white font-RobotoMono mt-5">
                                 <span className="text-primary">
                                     Passionate about innovation
                                 </span>
@@ -61,12 +60,12 @@ const About = () => {
                                 into reality, delivering solutions that empower
                                 clients to achieve their digital goals.
                             </p>
-                            <button
-                                className="flex gap-2 mt-5 items-center text-darker bg-primary/80 backdrop-blur-md rounded-sm py-3 px-7 font-semibold transition duration-500 ms-1 hover:bg-primary/100 hover:bg-opacity-80 hover:backdrop-blur-lg"
-                                href="#"
-                            >
-                                <FaDownload /> Download My CV
-                            </button>
+                            <MyButton
+                                type="button"
+                                color="bg-primary"
+                                text="Download My CV"
+                                icon={<FaDownload />}
+                            />
                         </div>
                     </div>
                 </div>

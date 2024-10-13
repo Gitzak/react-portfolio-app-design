@@ -4,7 +4,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { FaBars } from "react-icons/fa6";
 import { FaXmark } from "react-icons/fa6";
-import { FaReact } from "react-icons/fa6";
+import Logo from "../components/Logo";
 
 const Link = ({ page, selectedPage }) => {
     const lowerCasePage = page.toLowerCase();
@@ -60,13 +60,13 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
     return (
         <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-6`}>
             <div className="flex items-center justify-between mx-auto w-5/6">
-                <div className="flex justify-start items-center gap-2">
-                    <FaReact className="text-3xl" />
-                    <h4 className="font-RobotoMono text-2xl font-bold">
-                        Web Developer
-                    </h4>
-                </div>
-
+                <AnchorLink
+                    className="me-2"
+                    onClick={() => setSelectedPage("home")}
+                    href="#home"
+                >
+                    <Logo />
+                </AnchorLink>
                 {/* DESKTOP NAV */}
                 {isDesktop ? (
                     <div className="flex justify-between gap-12 font-RobotoMono text-md font-semibold m-3">
@@ -89,7 +89,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
                 <AnimatePresence>
                     {!isDesktop && isMenuToggled && (
                         <motion.div
-                            className="fixed right-0 top-0 h-full min-h-screen w-[80vw] bg-dark bg-opacity-80 backdrop-blur-lg shadow-lg text-light"
+                            className="fixed right-0 top-0 h-full min-h-screen w-[40vw] bg-dark bg-opacity-80 backdrop-blur-lg shadow-lg text-light"
                             initial={{ x: "100%" }}
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
@@ -98,6 +98,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
                             {/* CLOSE ICON */}
                             <div className="flex justify-end p-8">
                                 <button
+                                    className="pr-12 pt-2"
                                     onClick={() =>
                                         setIsMenuToggled(!isMenuToggled)
                                     }

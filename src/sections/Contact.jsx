@@ -1,4 +1,6 @@
 import React from "react";
+import MyButton from "../components/MyButton";
+import { FaPaperPlane } from "react-icons/fa";
 
 const Contact = () => {
     return (
@@ -10,7 +12,7 @@ const Contact = () => {
                             Contact Me
                         </p>
                         <h2 className="max-w-xl mt-5 text-4xl font-bold tracking-tight font-outfit text-white sm:text-5xl">
-                            Read trusted reviews from our customers
+                            Let’s Bring Your Project to Life
                         </h2>
                         <p className="max-w-xl text-lg mt-5">
                             If you're ready to start a project or have
@@ -33,14 +35,15 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
+                    <div className="rounded-lg bg-dark p-8 shadow-lg lg:col-span-3 lg:p-12">
                         <form action="#" className="space-y-4">
                             <div>
                                 <label className="sr-only" htmlFor="name">
                                     Name
                                 </label>
                                 <input
-                                    className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                    className="w-full rounded-lg border-2 border-secondary p-3 text-sm bg-transparent text-white 
+                focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary"
                                     placeholder="Name"
                                     type="text"
                                     id="name"
@@ -53,7 +56,8 @@ const Contact = () => {
                                         Email
                                     </label>
                                     <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                        className="w-full rounded-lg border-2 border-secondary p-3 text-sm bg-transparent text-white 
+                    focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary"
                                         placeholder="Email address"
                                         type="email"
                                         id="email"
@@ -65,76 +69,12 @@ const Contact = () => {
                                         Phone
                                     </label>
                                     <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                        className="w-full rounded-lg border-2 border-secondary p-3 text-sm bg-transparent text-white 
+                    focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary"
                                         placeholder="Phone Number"
                                         type="tel"
                                         id="phone"
                                     />
-                                </div>
-                            </div>
-
-                            <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
-                                <div>
-                                    <label
-                                        htmlFor="Option1"
-                                        className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
-                                        tabIndex="0"
-                                    >
-                                        <input
-                                            className="sr-only"
-                                            id="Option1"
-                                            type="radio"
-                                            tabIndex="-1"
-                                            name="option"
-                                        />
-
-                                        <span className="text-sm">
-                                            {" "}
-                                            Option 1{" "}
-                                        </span>
-                                    </label>
-                                </div>
-
-                                <div>
-                                    <label
-                                        htmlFor="Option2"
-                                        className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
-                                        tabIndex="0"
-                                    >
-                                        <input
-                                            className="sr-only"
-                                            id="Option2"
-                                            type="radio"
-                                            tabIndex="-1"
-                                            name="option"
-                                        />
-
-                                        <span className="text-sm">
-                                            {" "}
-                                            Option 2{" "}
-                                        </span>
-                                    </label>
-                                </div>
-
-                                <div>
-                                    <label
-                                        htmlFor="Option3"
-                                        className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
-                                        tabIndex="0"
-                                    >
-                                        <input
-                                            className="sr-only"
-                                            id="Option3"
-                                            type="radio"
-                                            tabIndex="-1"
-                                            name="option"
-                                        />
-
-                                        <span className="text-sm">
-                                            {" "}
-                                            Option 3{" "}
-                                        </span>
-                                    </label>
                                 </div>
                             </div>
 
@@ -144,7 +84,8 @@ const Contact = () => {
                                 </label>
 
                                 <textarea
-                                    className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                    className="w-full rounded-lg border-2 border-secondary p-3 text-sm bg-transparent text-white 
+                focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary"
                                     placeholder="Message"
                                     rows="8"
                                     id="message"
@@ -152,12 +93,12 @@ const Contact = () => {
                             </div>
 
                             <div className="mt-4">
-                                <button
+                                <MyButton
                                     type="submit"
-                                    className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
-                                >
-                                    Send Enquiry
-                                </button>
+                                    color="bg-primary"
+                                    text="Send message"
+                                    icon={<FaPaperPlane />}
+                                />
                             </div>
                         </form>
                     </div>

@@ -1,25 +1,27 @@
 import React, { useEffect, useRef } from "react";
 import KeenSlider from "keen-slider";
 import "keen-slider/keen-slider.min.css";
+import SubTitle from "../components/SubTitle";
+import TitlePrimary from "../components/TitlePrimary";
 
 const slidesData = [
     {
-        title: "Stayin' Alive",
+        title: "Exceptional Quality",
         content:
-            "No, Rose, they are not breathing. And they have no arms or legs … Where are they? You know what? If we come across somebody with no arms or legs, do we bother resuscitating them? I mean, what quality of life do we have there?",
-        author: "Michael Scott",
+            "Working with you was a breeze. You delivered exactly what I needed, ahead of schedule, with incredible attention to detail.",
+        author: "Alex Johnson",
     },
     {
-        title: "Life Lessons",
+        title: "Highly Recommended",
         content:
-            "Sometimes I'll start a sentence and I don't even know where it's going. I just hope I find it along the way.",
-        author: "Michael Scott",
+            "You understood my vision perfectly and brought it to life with great professionalism and skill.",
+        author: "Taylor Smith",
     },
     {
-        title: "Motivation",
+        title: "Outstanding Experience",
         content:
-            "I am running away from my responsibilities. And it feels good.",
-        author: "Michael Scott",
+            "You exceeded my expectations! I couldn’t be happier with the results and would definitely work with you again.",
+        author: "Jamie Lee",
     },
 ];
 
@@ -59,12 +61,8 @@ const Testimonials = () => {
                 <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:me-0 lg:pe-0 lg:ps-8">
                     <div className="max-w-7xl items-end justify-between sm:flex sm:pe-6 lg:pe-8">
                         <div className="flex flex-col gap-3">
-                            <p className="text-2xl mt-5 font-semibold font-RobotoMono leading-7 text-primary">
-                                Testimonials
-                            </p>
-                            <h2 className="max-w-xl text-4xl font-bold tracking-tight font-outfit text-white sm:text-5xl">
-                                Read trusted reviews from our customers
-                            </h2>
+                            <SubTitle text="Testimonials" />
+                            <TitlePrimary text="See what clients are saying about my work." />
                         </div>
                         <div className="mt-8 flex gap-4 lg:mt-0">
                             <button

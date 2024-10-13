@@ -5,8 +5,9 @@ import SocialMediaIcons from "../components/SocialMediaIcons";
 import profileImage from "../assets/profile-image.jpg";
 import { FaRegEnvelope } from "react-icons/fa6";
 import { FlagIcon } from "react-flag-kit";
+import MyButton from "../components/MyButton";
 
-const Landing = ({ setSelectedPage }) => {
+const Hero = ({ setSelectedPage }) => {
     return (
         <section
             id="home"
@@ -44,7 +45,7 @@ const Landing = ({ setSelectedPage }) => {
                         </span>
                     </p>
 
-                    <p className="mt-5 mb-7 text-lg text-center md:text-start">
+                    <p className="mt-5 mb-7 font-RobotoMono text-lg text-center md:text-start">
                         A skilled web developer based in Rabat, Morocco
                         <FlagIcon
                             code="MA"
@@ -69,21 +70,27 @@ const Landing = ({ setSelectedPage }) => {
                     }}
                 >
                     <AnchorLink
-                        className="bg-primary/80 text-darker rounded-sm 
-            py-3 px-3 font-semibold transition duration-500 me-1
-            hover:bg-primary/100 hover:bg-opacity-80"
+                    className="me-2"
                         onClick={() => setSelectedPage("about")}
                         href="#about"
                     >
-                        About Me
+                        <MyButton
+                            type="button"
+                            color="bg-primary"
+                            text="About Me"
+                        />
                     </AnchorLink>
                     <AnchorLink
-                        className="flex items-center gap-2 bg-dark/80 rounded-sm py-3 px-3 font-semibold
-            transition duration-500 ms-1 hover:bg-dark/100 hover:bg-opacity-80"
                         onClick={() => setSelectedPage("contact")}
                         href="#contact"
                     >
-                        <FaRegEnvelope /> Contact Me
+                        <MyButton
+                            type="button"
+                            color="bg-secondary"
+                            text="Contact Me"
+                            textColor="text-white"
+                            icon={<FaRegEnvelope />}
+                        />
                     </AnchorLink>
                 </motion.div>
 
@@ -105,4 +112,4 @@ const Landing = ({ setSelectedPage }) => {
     );
 };
 
-export default Landing;
+export default Hero;
