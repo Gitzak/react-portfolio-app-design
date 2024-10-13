@@ -5,13 +5,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        "deep-blue": "#232323",
-        blue: "#0070f0",
-        red: "#ff0055",
-        yellow: "#a4fc00",
-        grey: "#ededed",
-        "dark-grey": "#757575",
-        "opaque-black": "rgba(48, 48, 48, 0.35)",
+        primary: "#C6DE41",
+        secondary: "#2D6E7E",
+        dark: "#153B44",
+        dark2: "#0c677d",
+        darker: "#1d1d1d",
       },
       backgroundImage: (theme) => ({
         "gradient-1":
