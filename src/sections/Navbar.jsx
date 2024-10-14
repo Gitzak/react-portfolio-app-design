@@ -89,7 +89,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
                 <AnimatePresence>
                     {!isDesktop && isMenuToggled && (
                         <motion.div
-                            className="fixed right-0 top-0 h-full min-h-screen w-[40vw] bg-dark bg-opacity-80 backdrop-blur-lg shadow-lg text-light"
+                            className="fixed right-0 top-0 h-full min-h-screen w-[250px] bg-dark bg-opacity-80 backdrop-blur-lg shadow-lg text-light"
                             initial={{ x: "100%" }}
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}

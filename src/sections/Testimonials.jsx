@@ -64,7 +64,7 @@ const Testimonials = () => {
   return (
     <section id="testimonials">
       <div className="bg-stone-900 py-24 sm:py-32">
-        <div className="mx-auto px-4 sm:px-6 lg:me-0 lg:pe-0 lg:ps-8">
+        <div className="mx-auto px-2 sm:px-6 lg:me-0 lg:pe-0 lg:ps-8">
           <div className="max-w-full items-end justify-between sm:flex sm:pe-6 lg:pe-8">
             <motion.div
               initial="hidden"

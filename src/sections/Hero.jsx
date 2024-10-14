@@ -30,7 +30,7 @@ const Hero = ({ setSelectedPage }) => {
       {!isLoading && (
         <>
           {/* IMAGE SECTION */}
-          <div className="basis-3/6 z-10 mt-16 md:mt-32 flex justify-center md:order-2">
+          <div className="basis-3/6 z-10 mt-2 md:mt-32 flex justify-center md:order-2">
             <motion.img
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -60,9 +60,7 @@ const Hero = ({ setSelectedPage }) => {
                   code="MA"
                   className="inline-block w-8 h-5 ml-1 align-text-bottom"
                 />{" "}
-                creating responsive, user-friendly websites that blend
-                creativity and technical expertise, reflecting Moroccan culture
-                while embracing modern web development trends.
+                creating responsive, user-friendly websites
               </p>
             </motion.div>
 
@@ -94,7 +92,7 @@ const Hero = ({ setSelectedPage }) => {
             </motion.div>
 
             <motion.div
-              className="flex mt-5 justify-center md:justify-start"
+              className="flex mt-2 justify-center md:justify-start"
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ delay: 0.4, duration: 0.5 }}
@@ -102,7 +100,7 @@ const Hero = ({ setSelectedPage }) => {
               <SocialMediaIcons />
             </motion.div>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center mt-8">
             <ScrollDownButton />
           </div>
         </>
