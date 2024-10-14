@@ -1,23 +1,74 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
 import MyButton from "../components/MyButton";
 import { FaPaperPlane } from "react-icons/fa";
 import SubTitle from "../components/SubTitle";
 import TitlePrimary from "../components/TitlePrimary";
 
+const formVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  }),
+};
+
+const validationRules = {
+  name: { required: "Name is required" },
+  email: {
+    required: "Email is required",
+    pattern: { value: /^\S+@\S+$/i, message: "Enter a valid email" },
+  },
+  phone: { required: "Phone number is required" },
+  message: { required: "Message is required" },
+};
+
 const Contact = () => {
-  const formVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.2,
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    }),
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid, isSubmitSuccessful },
+    reset,
+  } = useForm({ mode: "onBlur" });
+  const [isMessageSent, setIsMessageSent] = useState(false);
+
+  const onSubmit = (data) => {
+    if (isValid) {
+      setIsMessageSent(true);
+      reset();
+    }
   };
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      setTimeout(() => {
+        setIsMessageSent(false);
+      }, 3000);
+    }
+  }, [isSubmitSuccessful]);
+
+  const renderInput = (id, type, placeholder, validation) => (
+    <>
+      <input
+        {...register(id, validation)}
+        id={id}
+        type={type}
+        placeholder={placeholder}
+        className={`w-full rounded-lg border-2 p-3 text-sm bg-transparent text-white 
+          focus:outline-none focus:ring-2 focus:ring-secondary 
+          ${errors[id] ? "border-red-500" : "border-secondary"}`}
+      />
+      {errors[id] && (
+        <p className="text-red-500 text-sm">{errors[id].message}</p>
+      )}
+    </>
+  );
 
   return (
     <section id="contact" className="bg-transparent">
@@ -76,25 +127,18 @@ const Contact = () => {
           </div>
 
           <div className="rounded-lg bg-dark p-8 shadow-lg lg:col-span-3 lg:p-12">
-            <form action="#" className="space-y-4 font-RobotoMono">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="space-y-4 font-RobotoMono"
+            >
               <motion.div
                 custom={0}
                 initial="hidden"
                 animate="visible"
                 variants={formVariants}
               >
-                <label className="sr-only" htmlFor="name">
-                  Name
-                </label>
-                <input
-                  className="w-full rounded-lg border-2 border-secondary p-3 text-sm bg-transparent text-white 
-            focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary"
-                  placeholder="Name"
-                  type="text"
-                  id="name"
-                />
+                {renderInput("name", "text", "Name", validationRules.name)}
               </motion.div>
-
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <motion.div
                   custom={1}
@@ -102,61 +146,59 @@ const Contact = () => {
                   animate="visible"
                   variants={formVariants}
                 >
-                  <label className="sr-only" htmlFor="email">
-                    Email
-                  </label>
-                  <input
-                    className="w-full rounded-lg border-2 border-secondary p-3 text-sm bg-transparent text-white 
-              focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary"
-                    placeholder="Email address"
-                    type="email"
-                    id="email"
-                  />
+                  {renderInput(
+                    "email",
+                    "email",
+                    "Email address",
+                    validationRules.email
+                  )}
                 </motion.div>
-
                 <motion.div
                   custom={2}
                   initial="hidden"
                   animate="visible"
                   variants={formVariants}
                 >
-                  <label className="sr-only" htmlFor="phone">
-                    Phone
-                  </label>
-                  <input
-                    className="w-full rounded-lg border-2 border-secondary p-3 text-sm bg-transparent text-white 
-              focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary"
-                    placeholder="Phone Number"
-                    type="tel"
-                    id="phone"
-                  />
+                  {renderInput(
+                    "phone",
+                    "tel",
+                    "Phone Number",
+                    validationRules.phone
+                  )}
                 </motion.div>
               </div>
-
               <motion.div
                 custom={3}
                 initial="hidden"
                 animate="visible"
                 variants={formVariants}
               >
-                <label className="sr-only" htmlFor="message">
-                  Message
-                </label>
                 <textarea
-                  className="w-full rounded-lg border-2 border-secondary p-3 text-sm bg-transparent text-white 
-            focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary"
+                  {...register("message", validationRules.message)}
                   placeholder="Message"
                   rows="8"
-                  id="message"
+                  className={`w-full rounded-lg border-2 p-3 text-sm bg-transparent text-white 
+                    focus:outline-none focus:ring-2 focus:ring-secondary 
+                    ${errors.message ? "border-red-500" : "border-secondary"}`}
                 ></textarea>
+                {errors.message && (
+                  <p className="text-red-500 text-sm">
+                    {errors.message.message}
+                  </p>
+                )}
               </motion.div>
-
               <motion.div
                 custom={4}
                 initial="hidden"
                 animate="visible"
                 variants={formVariants}
               >
+                {isMessageSent && (
+                  <p className="text-green-500 mb-4 text-md">
+                    Message sent successfully!
+                  </p>
+                )}
+
                 <MyButton
                   type="submit"
                   color="bg-primary"
