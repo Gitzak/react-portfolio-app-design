@@ -58,7 +58,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
     }, [selectedPage, setSelectedPage]);
 
     return (
-        <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-6`}>
+        <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-6 z-50`}>
             <div className="flex items-center justify-between mx-auto w-5/6">
                 <AnchorLink
                     className="me-2"

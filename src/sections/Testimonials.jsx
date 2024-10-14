@@ -68,13 +68,13 @@ const Testimonials = () => {
                             <button
                                 ref={prevRef}
                                 aria-label="Previous slide"
-                                className="rounded-full border border-primary p-3 text-primary transition hover:bg-primary hover:text-dark"
+                                className="rounded-full border-2 border-primary p-3 text-primary transition hover:bg-primary hover:text-dark"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
-                                    strokeWidth="1.5"
+                                    strokeWidth="2"
                                     stroke="currentColor"
                                     className="size-5 rtl:rotate-180"
                                 >
@@ -88,7 +88,7 @@ const Testimonials = () => {
                             <button
                                 ref={nextRef}
                                 aria-label="Next slide"
-                                className="rounded-full border border-primary p-3 text-primary transition hover:bg-primary hover:text-dark"
+                                className="rounded-full border-2 border-primary p-3 text-primary transition hover:bg-primary hover:text-dark"
                             >
                                 <svg
                                     className="size-5 rtl:rotate-180"
@@ -130,7 +130,7 @@ const Testimonials = () => {
                                                 <p className="text-2xl font-bold text-white sm:text-3xl">
                                                     {slide.title}
                                                 </p>
-                                                <p className="mt-4 leading-relaxed text-white">
+                                                <p className="mt-4 leading-relaxed text-white font-RobotoMono">
                                                     {slide.content}
                                                 </p>
                                             </div>

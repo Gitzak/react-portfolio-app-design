@@ -12,7 +12,7 @@ const MyButton = ({
     return (
         <button
             type={type}
-            className={`inline-block w-full font-RobotoMono rounded-lg ${color} ${textColor} px-5 py-3 font-medium text-sm sm:w-auto flex items-center justify-center ${className}`}
+            className={`inline-block w-full font-RobotoMono rounded-lg ${color} ${textColor} px-5 py-3 font-medium text-md sm:w-auto flex items-center justify-center ${className}`}
             {...props}
         >
             {icon && <span className="mr-2">{icon}</span>}
